@@ -4,24 +4,9 @@ var _ = (function() {
 		// configure tag used
 		unfocusedTag = config.unfocusedTag();
 
-		// get list of all projects
-		projectsList = [];
-		library.apply(function(item) {
-			if (
-				item instanceof Project &&
-				(item.task.taskStatus === Task.Status.Available ||
-					(item.task.taskStatus === Task.Status.Blocked &&
-						item.status !== Project.Status.OnHold))
-			) {
-				projectsList.push(item);
-			}
-		});
-
 		// get list of selected projects
-		projectsToFocus = [];
-		selection.projects.forEach(function(project) {
-			projectsToFocus.push(project);
-		});
+		projectsToFocus = selection.projects;
+		// add projects from inside selected folders into list
 		selection.folders.forEach(function(folder) {
 			folder.apply(function(item) {
 				if (item instanceof Project) {
@@ -30,9 +15,14 @@ var _ = (function() {
 			});
 		});
 
-		// set 'unfocused' tag
-		projectsList.forEach(function(project) {
-			if (!projectsToFocus.includes(project)) {
+		// get list of all active projects not in 'focus' list
+		flattenedProjects.forEach(project => {
+			if (
+				project.status === Project.Status.Active &&
+				!projectsToFocus.includes(project)
+			) {
+				// for each active project,
+				// set 'unfocused' tag and put on hold
 				project.task.addTag(unfocusedTag);
 				project.status = Project.Status.OnHold;
 			}
