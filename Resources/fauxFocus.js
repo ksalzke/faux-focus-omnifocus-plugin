@@ -1,6 +1,8 @@
 var _ = (function() {
 	var action = new PlugIn.Action(function(selection, sender) {
-		unfocusedTag = tagNamed("Unfocused") || new Tag("Unfocused");
+		config = this.focusConfig;
+		// configure tag used
+		unfocusedTag = config.unfocusedTag();
 
 		// get list of all projects
 		projectsList = [];

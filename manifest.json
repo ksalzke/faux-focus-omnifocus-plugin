@@ -10,5 +10,9 @@
 		},
 		{ "identifier": "fauxUnFocus" }
 	],
-	"libraries": []
+	"libraries": [
+		{
+			"identifier": "focusConfig"
+		}
+	]
 }
