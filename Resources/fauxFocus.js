@@ -27,6 +27,9 @@ var _ = (function() {
 				project.status = Project.Status.OnHold;
 			}
 		});
+
+		// show alert to confirm finished
+		new Alert("Focus", "Script complete.").show();
 	});
 
 	action.validate = function(selection, sender) {

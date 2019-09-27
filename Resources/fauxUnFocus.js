@@ -11,6 +11,9 @@ var _ = (function() {
 
 		// delete the 'Unfocused' tag
 		deleteObject(unfocusedTag);
+
+		// show alert to confirm finished
+		new Alert("Unfocused", "Script complete.").show();
 	});
 
 	action.validate = function(selection, sender) {
