@@ -14,7 +14,9 @@ var _ = (function() {
   });
 
   action.validate = function(selection, sender) {
-    return tagNamed("Unfocused").tasks.length > 0;
+    config = this.focusConfig;
+    unfocusedTag = config.unfocusedTag();
+    return unfocusedTag.tasks.length > 0;
   };
 
   return action;
