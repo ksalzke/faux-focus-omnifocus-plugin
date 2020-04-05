@@ -1,5 +1,5 @@
-var _ = (function() {
-  var action = new PlugIn.Action(function(selection, sender) {
+(() => {
+  var action = new PlugIn.Action(function (selection, sender) {
     config = this.focusConfig;
 
     // if a project is already unfocused when script is run, run 'Unfocus' script first
@@ -15,8 +15,8 @@ var _ = (function() {
     // get list of selected projects
     projectsToFocus = selection.projects;
     // add projects from inside selected folders into list
-    selection.folders.forEach(function(folder) {
-      folder.apply(function(item) {
+    selection.folders.forEach(function (folder) {
+      folder.apply(function (item) {
         if (item instanceof Project) {
           projectsToFocus.push(item);
         }
@@ -24,7 +24,7 @@ var _ = (function() {
     });
 
     // get list of all active projects not in 'focus' list
-    flattenedProjects.forEach(project => {
+    flattenedProjects.forEach((project) => {
       if (
         project.status === Project.Status.Active &&
         !projectsToFocus.includes(project)
@@ -40,10 +40,9 @@ var _ = (function() {
     new Alert("Focus", "Script complete.").show();
   });
 
-  action.validate = function(selection, sender) {
+  action.validate = function (selection, sender) {
     return selection.projects.length > 0 || selection.folders.length > 0;
   };
 
   return action;
 })();
-_;
