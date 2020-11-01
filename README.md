@@ -8,9 +8,7 @@ _Please note that all scripts on my GitHub account (or shared elsewhere) are wor
 
 ## Known issues 
 
-### Issue running report on macOS
-
-Note that this currently does not run on macOS (or iOS versions earlier than v3.4+) as it makes use of the `flattenedProjects` variable which is not yet available there.
+None so far! 🤞
 
 # Installation & Set-Up
 
@@ -26,13 +24,21 @@ Note that this currently does not run on macOS (or iOS versions earlier than v3.
 
 ## Faux Focus
 
-This action can be run on one or more selected projects and/or folders. It:
-1. Checks if there is already a 'focused' project and if so begins by running the 'Faux Unfocus' action.
-2. For each active project that is not selected or inside a selected folder, applies an `Unfocused` tag (which can be configured in the configuration file) and marks the project as on hold.
-3. When finished, an alert is shown to confirm that the script is completed.
+This action runs the `focus` function (see below) on one or more selected projects and/or folders.
 
 ## Faux Unfocus
 
 This action can be run when the 'unfocused' tag is applied to one or more projects. It:
 1. Makes each project that is tagged with `Unfocused` active.
 2. Deletes the `Unfocused` tag.
+
+# Functions
+
+This plugin contains the following function within the `focusLib` library:
+
+## focus
+
+This function takes an array of projects and an array of folders as input. It:
+1. Checks if there is already a 'focused' project and if so begins by running the 'Faux Unfocus' action.
+2. For each active project that is not selected or inside a selected folder, applies an `Unfocused` tag (which can be configured in the configuration file) and marks the project as on hold.
+3. When finished, an alert is shown to confirm that the script is completed.

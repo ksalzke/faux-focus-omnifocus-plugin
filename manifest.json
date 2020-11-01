@@ -1,18 +1,21 @@
 {
-	"defaultLocale": "en",
-	"identifier": "com.KaitlinSalzke.fauxFocus",
-	"author": "Kaitlin Salzke",
-	"description": "Mimics the 'Focus' mode available on desktop with a set of actions to place projects on-hold or set them to active.",
-	"version": "2.0.0",
-	"actions": [
-		{
-			"identifier": "fauxFocus"
-		},
-		{ "identifier": "fauxUnFocus" }
-	],
-	"libraries": [
-		{
-			"identifier": "focusConfig"
-		}
-	]
+  "defaultLocale": "en",
+  "identifier": "com.KaitlinSalzke.fauxFocus",
+  "author": "Kaitlin Salzke",
+  "description": "Mimics the 'Focus' mode available on desktop with a set of actions to place projects on-hold or set them to active.",
+  "version": "2.0.0",
+  "actions": [
+    {
+      "identifier": "fauxFocus"
+    },
+    { "identifier": "fauxUnFocus" }
+  ],
+  "libraries": [
+    {
+      "identifier": "focusConfig"
+    },
+    {
+      "identifier": "focusLib"
+    }
+  ]
 }
