@@ -1,16 +1,10 @@
-
-
-
-
 # About
 
 This is an Omni Automation plug-in bundle for OmniFocus that mimics the built-in 'Focus' mode that is available on Mac. Further details are provided below.
 
 This plugin was inspired by Ryan Murphy and his Applescript shared [here](https://discourse.omnigroup.com/t/enabling-focus-on-ios-through-scripting-and-tags-and-seeking-suggestions-for-faster-execution/47302).
 
-_Please note that Omni Automation for OmniFocus is still in development and details are subject to change before it officially ships. If you have questions, please refer to [Omni's Slack #automation channel](https://www.omnigroup.com/slack/)._
-
-_In addition, please note that all scripts on my GitHub account (or shared elsewhere) are works in progress. If you encounter any issues or have any suggestions please let me know--and do please make sure you backup your database before running scripts from a random amateur on the internet!)_
+_Please note that all scripts on my GitHub account (or shared elsewhere) are works in progress. If you encounter any issues or have any suggestions please let me know--and do please make sure you backup your database before running scripts from a random amateur on the internet!)_
 
 ## Known issues 
 
